@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com');
+@import url('https://fonts.gstatic.com');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.fade-out {
+    animation: fadeOut 2s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo img {
+    cursor: pointer;
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10;
+    background-color: #ffcc00;
+    border-bottom: 1px solid #3d2e21;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.h1 {
+    font-family: Lexend Mega, sans-serif;  ;
+    color: #3d2e21;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.filter-select {
+    color: #3d2e21;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 30px;
+    border: 1px solid #3d2e21;
+    background-color: #ffcc00;
+    font-size: 16px;
+    width: 170px;  
+    margin-right: 10px; 
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter-select:hover {
+    border-color: #ffcc00;
+}
+
+.filter-select:focus {
+    border-color: #3d2e21;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h5 {
+    color: #3d2e21;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 0.8rem;
+    color: #3d2e21;
+}
+
+.card-body a {
+    background-color: #ffcc00; 
+    color: #3d2e21; 
+    text-decoration: none; 
+    border-radius: 30px; 
+    border: 1px solid #3d2e21; 
+    width: 100%; 
+    text-align: center;
+}
+
+.card-body a:hover {
+    background-color: #ffcc00;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffcc00;
+}
+
+.maps-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+}
+
+#mappy {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3d2e21;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 17px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #3d2e21;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: none;
+    z-index: 9999; 
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #ffcc00;
+}
+
+.scroll-to-top-btn:focus {
+    outline: none;
+}
+
+
+footer {
+    background-color: #ffcc00;
+    padding: 20px 30px; 
+    text-align: center; 
+    border-top: 1px solid #3d2e21;
+}
+
+/* mobile ver */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem !important;
+    }
+    
+    .cards-container {
+        gap: 25px;
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .btn-select {
+        padding: 8px 12px;
+        border-radius: 30px;
+    }
+}
+
+.map-info-window {
+    min-width: 250px;
+    
+    h6 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+.swiper-slide {
+    transition: all 1s ease !important;
+    opacity: 1;
+    
+    &[style*="display: none"] {
+        transform: scale(0.9);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.no-results-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 10;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
+    
+    i {
+        font-size: 1.4rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
